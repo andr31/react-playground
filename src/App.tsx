@@ -17,7 +17,7 @@ function App() {
       <div
         className="min-h-screen bg-cover bg-center"
         style={{
-          backgroundImage: "url('/public/static/images/Lucas_merged_1.png')",
+          backgroundImage: "url('/static/images/Lucas_merged_1.png')",
         }}
       >
         <main className="container mx-auto px-4 py-8"></main>
