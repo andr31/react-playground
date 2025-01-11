@@ -14,12 +14,7 @@ function App() {
   return (
     <>
       <Navbar menuItems={menuItems} />
-      <div
-        className="min-h-screen bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/static/images/Lucas_merged_1.png')",
-        }}
-      >
+      <div className="background">
         <main className="container mx-auto px-4 py-8"></main>
       </div>
       <WorkInProgress></WorkInProgress>

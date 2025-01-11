@@ -1,7 +1,21 @@
 @font-face {
   font-family: 'Madelyn';
-  src: url('./assets/fonts/madelyn/Madelyn-Trial-Regular.woff2') format('woff2'),
-  url('./assets/fonts/madelyn/Madelyn-Trial-Regular.woff') format('woff');
+  src:
+    url('./assets/fonts/madelyn/Madelyn-Trial-Regular.woff2') format('woff2'),
+    url('./assets/fonts/madelyn/Madelyn-Trial-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+}
+
+.background {
+  min-height: 100vh;
+  background-size: cover;
+  background-position: center;
+  background-image: url('/static/images/Lucas_merged_1.png');
+}
+
+@media (max-width: 768px) {
+  .background {
+    background-image: url('/static/images/Luna_Lucas.jpg');
+  }
 }
