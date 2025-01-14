@@ -28,10 +28,11 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   };
 
   return (
-    <div className="flex justify-center bg-[#e8e8e1] flex-col lg:flex-row ml-10">
+    <div className="flex justify-center bg-[#e8e8e1] flex-col lg:flex-row lg:ml-10">
       <div className="flex-grow">
         <form onSubmit={handleSubmit} className="bg-[#dbccc3] p-5">
           <div className="m-10">
+            <div className="mb-4 text-center font-bold text-2xl" >Let's Talk!</div>
             <div className="mb-4">
               <label className="block font-bold mb-2">First Name:</label>
               <input
