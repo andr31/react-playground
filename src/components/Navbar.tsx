@@ -13,7 +13,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
   };
 
   return (
-    <nav className="bg-gray-800">
+    <nav className="bg-gray-800 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="font-bold text-white">
@@ -24,13 +24,18 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
 
         {/* Hamburger Menu Icon */}
         <div className="sm:hidden">
-          <button onClick={toggleMenu} className="text-white focus:outline-none">
+          <button
+            onClick={toggleMenu}
+            className="text-white focus:outline-none"
+          >
             {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
         {/* Menu Items Section */}
-        <div className={`flex-col sm:flex-row sm:flex ${isOpen ? 'flex' : 'hidden'} sm:space-x-4 mt-4 sm:mt-0`}>
+        <div
+          className={`flex-col sm:flex-row sm:flex ${isOpen ? 'flex' : 'hidden'} sm:space-x-4 mt-4 sm:mt-0`}
+        >
           {menuItems.map((item, index) => (
             <a
               key={index}
@@ -43,7 +48,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
         </div>
 
         {/* Right Section */}
-        <div className="flex space-x-4 items-center mt-4 sm:mt-0">
+        <div className="hidden md:flex md:space-x-4 md:items-center md:mt-4">
           <a
             href="https://facebook.com"
             className="text-white hover:text-[#ac440c]"

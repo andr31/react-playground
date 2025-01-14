@@ -7,6 +7,5 @@ export default {
         madelyn: ['Madelyn', 'sans-serif'],
       },
     },
-  },
-  plugins: [],
+  }
 };
