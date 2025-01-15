@@ -9,10 +9,9 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', 'https://moonwave-six.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-
+  console.log('API key:', process.env.VITE_SENDGRID_API_KEY);
   try {
     sgMail.setApiKey(process.env.VITE_SENDGRID_API_KEY);
-    console.log('API key:', process.env.VITE_SENDGRID_API_KEY);
     const { email, firstName, lastName, message } = req.body;
     
     const msg = {
