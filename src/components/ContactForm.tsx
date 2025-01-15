@@ -21,27 +21,31 @@ const ContactForm: React.FC<ContactFormProps> = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
     if (!emailError) {
-      // Handle form submission
-      console.log({ firstName, lastName, email, message });
-      sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
-      const msg = {
-        to: 'habuc4@gmail.com', // Change to your recipient
-        from: email, // Change to your verified sender
-        subject: `Request Moonwave from ${firstName} ${lastName}`,
-        text: message,
-        html: '<strong>Sendgrid Test Email Template</strong>',
-      };
-      sgMail
-        .send(msg)
-        .then(() => {
-          console.log('Email sent');
-        })
-        .catch((error) => {
-          console.error(error);
+      try {
+        const response = await fetch('/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            firstName,
+            lastName,
+            email,
+            message,
+          }),
         });
+
+        const data = await response.json();
+        console.log('Email sent:', data);
+        // Handle success (maybe show a success message to user)
+      } catch (error) {
+        console.error('Error sending email:', error);
+        // Handle error (show error message to user)
+      }
     }
   };
 
