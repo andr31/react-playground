@@ -11,7 +11,7 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
 
   try {
-    sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
+    sgMail.setApiKey(process.env.VITE_SENDGRID_API_KEY);
     const { email, firstName, lastName, message } = req.body;
     
     const msg = {
