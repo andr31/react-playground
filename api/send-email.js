@@ -16,16 +16,25 @@ export default async function handler(req, res) {
     
     const msg = {
       to: 'habuc4@gmail.com',
-      from: email,
+      from: 'habuc4@gmail.com', // CHANGE THIS: Use your verified sender email
+      replyTo: email, // This allows replies to go to the form submitter
       subject: `Request Moonwave from ${firstName} ${lastName}`,
-      text: message,
-      html: '<strong>Sendgrid Test Email Template</strong>',
+      text: `Message from: ${email}\n\n${message}`,
+      html: `
+        <p>From: ${email}</p>
+        <p>Name: ${firstName} ${lastName}</p>
+        <p>Message:</p>
+        <p>${message}</p>
+      `
     };
     
     await sgMail.send(msg);
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
-    console.error('Error sending email:', error);
-    res.status(500).json({ error: error.message });
+    console.error('Full error:', error);
+    res.status(500).json({ 
+      error: error.message,
+      details: error.response?.body || 'No additional details'
+    });
   }
 }
