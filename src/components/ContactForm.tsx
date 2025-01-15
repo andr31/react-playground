@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 
+import sgMail from '@sendgrid/mail';
+
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
@@ -24,6 +26,22 @@ const ContactForm: React.FC<ContactFormProps> = () => {
     if (!emailError) {
       // Handle form submission
       console.log({ firstName, lastName, email, message });
+      sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
+      const msg = {
+        to: email, // Change to your recipient
+        from: 'habuc4@gmail.com', // Change to your verified sender
+        subject: `Request Moonwave from ${firstName} ${lastName}`,
+        text: message,
+        html: '<strong>Sendgrid Test Email Template</strong>',
+      };
+      sgMail
+        .send(msg)
+        .then(() => {
+          console.log('Email sent');
+        })
+        .catch((error) => {
+          console.error(error);
+        });
     }
   };
 
@@ -32,7 +50,9 @@ const ContactForm: React.FC<ContactFormProps> = () => {
       <div className="flex-grow">
         <form onSubmit={handleSubmit} className="bg-[#dbccc3] p-5">
           <div className="m-10">
-            <div className="mb-4 text-center font-bold text-2xl" >Let's Talk!</div>
+            <div className="mb-4 text-center font-bold text-2xl">
+              Let's Talk!
+            </div>
             <div className="mb-4">
               <label className="block font-bold mb-2">First Name:</label>
               <input

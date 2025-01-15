@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import WorkInProgress from './components/WorkInProgress.tsx';
 import ContactForm from './components/ContactForm.tsx';
 import PromotionBannerProps from './components/PromotionBanner';
+import Footer from './components/Footer.tsx';
 
 function App() {
   const menuItems = [
@@ -27,6 +28,7 @@ function App() {
       </div>
       <PromotionBannerProps items={bannerItems}></PromotionBannerProps>
       <ContactForm></ContactForm>
+      <Footer></Footer>
       <WorkInProgress></WorkInProgress>
     </>
   );
