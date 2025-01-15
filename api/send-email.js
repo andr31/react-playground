@@ -12,6 +12,7 @@ export default async function handler(req, res) {
 
   try {
     sgMail.setApiKey(process.env.VITE_SENDGRID_API_KEY);
+    console.log('API key:', process.env.VITE_SENDGRID_API_KEY);
     const { email, firstName, lastName, message } = req.body;
     
     const msg = {
