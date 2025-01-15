@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import sgMail from '@sendgrid/mail';
-
 interface ContactFormProps {}
 
 const ContactForm: React.FC<ContactFormProps> = () => {
