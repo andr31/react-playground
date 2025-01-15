@@ -28,8 +28,8 @@ const ContactForm: React.FC<ContactFormProps> = () => {
       console.log({ firstName, lastName, email, message });
       sgMail.setApiKey(import.meta.env.VITE_SENDGRID_API_KEY);
       const msg = {
-        to: email, // Change to your recipient
-        from: 'habuc4@gmail.com', // Change to your verified sender
+        to: 'habuc4@gmail.com', // Change to your recipient
+        from: email, // Change to your verified sender
         subject: `Request Moonwave from ${firstName} ${lastName}`,
         text: message,
         html: '<strong>Sendgrid Test Email Template</strong>',
