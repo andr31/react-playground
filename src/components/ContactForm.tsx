@@ -103,18 +103,18 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           </div>
         </form>
       </div>
-      <div className="flex-grow min-w-fit">
+      <div className="flex-grow min-w-fit pb-10 pt-5 lg:pb-0 lg:pt-0">
         <div className="hidden md:flex-row md:flex md:h-full md:justify-center md:items-center">
           {/*<h1 className="absolute mb-[320px] font-madelyn text-4xl sm:text-5xl md:text-6xl"> Craft The Perfect Memory</h1>*/}
           <img
             src="/static/images/Luna_1.jpg"
             alt="Contact"
-            className="w-48 h-72 rounded-lg"
+            className="w-60 h-82 rounded-lg"
           />
           <img
             src="/static/images/Luna.jpg"
             alt="Contact"
-            className="w-48 h-72 rounded-lg absolute mt-[3rem] ml-[8rem] z-10"
+            className="w-60 82 rounded-lg absolute mt-[3rem] ml-[8rem] z-10"
           />
           <div className="w-48 h-72"></div>
         </div>

@@ -4,6 +4,9 @@ import WorkInProgress from './components/WorkInProgress.tsx';
 import ContactForm from './components/ContactForm.tsx';
 import PromotionBannerProps from './components/PromotionBanner';
 import Footer from './components/Footer.tsx';
+import AboutMe from './components/AboutMe.tsx';
+import Portfolio from './components/Portfolio.tsx';
+import GettingReady from './components/GettingReady.tsx';
 
 function App() {
   const menuItems = [
@@ -27,6 +30,9 @@ function App() {
         <main className="container mx-auto px-4 py-8"></main>
       </div>
       <PromotionBannerProps items={bannerItems}></PromotionBannerProps>
+      <AboutMe></AboutMe>
+      <Portfolio></Portfolio>
+      <GettingReady></GettingReady>
       <ContactForm></ContactForm>
       <Footer></Footer>
       <WorkInProgress></WorkInProgress>
