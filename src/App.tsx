@@ -7,6 +7,7 @@ import Footer from './components/Footer.tsx';
 import AboutMe from './components/AboutMe.tsx';
 import Portfolio from './components/Portfolio.tsx';
 import GettingReady from './components/GettingReady.tsx';
+import Pricing from './components/Pricing.tsx';
 
 function App() {
   const menuItems = [
@@ -33,6 +34,7 @@ function App() {
       <AboutMe></AboutMe>
       <Portfolio></Portfolio>
       <GettingReady></GettingReady>
+      <Pricing></Pricing>
       <ContactForm></ContactForm>
       <Footer></Footer>
       <WorkInProgress></WorkInProgress>

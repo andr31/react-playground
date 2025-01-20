@@ -49,7 +49,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
 
   return (
     <div className="flex justify-center bg-[#e8e8e1] flex-col lg:flex-row lg:ml-10">
-      <div className="flex-grow">
+      <div className="flex-grow max-w-4xl">
         <form onSubmit={handleSubmit} className="bg-[#dbccc3] p-5">
           <div className="m-10">
             <div className="mb-4 text-center font-bold text-2xl">
@@ -109,12 +109,12 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           <img
             src="/static/images/Luna_1.jpg"
             alt="Contact"
-            className="w-60 h-82 rounded-lg"
+            className="w-60 h-82 lg:w-[300px] rounded-lg"
           />
           <img
             src="/static/images/Luna.jpg"
             alt="Contact"
-            className="w-60 82 rounded-lg absolute mt-[3rem] ml-[8rem] z-10"
+            className="w-60 h-82 lg:w-[300px] rounded-lg absolute mt-[3rem] ml-[20rem] z-10"
           />
           <div className="w-48 h-72"></div>
         </div>

@@ -7,7 +7,7 @@ const AboutMe: React.FC = () => {
         <img
           src="/static/images/Cristina.jpg"
           alt="About Me"
-          className="w-60 h-82 lg:w-96 lg:h-auto rounded-lg"
+          className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
         />
       </div>
       <div className="pt-5 lg:pt-0 max-w-2xl lg:ml-5">

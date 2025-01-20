@@ -16,7 +16,7 @@ const Portfolio: React.FC = () => {
             <img
               src={card.src}
               alt={card.label}
-              className="w-80 h-auto object-cover rounded-lg"
+              className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
             />
             <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-black text-white uppercase rounded-full px-6 py-3 text-lg">
               {card.label}
