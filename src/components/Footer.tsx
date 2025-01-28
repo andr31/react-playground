@@ -4,7 +4,7 @@ import { FaFacebook, FaInstagram } from 'react-icons/fa';
 const Footer: React.FC = () => {
   return (
     <div className="w-full bg-[#dbccc3] flex justify-center items-center py-4">
-      <div className="flex justify-between items-center w-full max-w-6xl px-4">
+      <div className="flex flex-col lg:flex-row justify-between items-center w-full max-w-6xl px-4">
         {/* First Section */}
         <div className="flex items-center space-x-4">
           <FaInstagram size={24} />

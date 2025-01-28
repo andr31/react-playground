@@ -2,13 +2,13 @@ import React from 'react';
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="flex flex-collg:flex-row items-center justify-center bg-[#dbccc3] p-5">
+    <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] pt-5 pb-5 prose">
       <img
         src="/static/images/Cristina.jpg"
         alt="About Me"
         className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
       />
-      <div className="prose pl-20">
+      <div className="lg:pl-20">
         <h1>I am Cristina</h1>
         <p className="text-lg text-center max-w-lg">
           I am a photographer, a storyteller, an adventurer, and a lover of

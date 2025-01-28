@@ -2,8 +2,8 @@ import React from 'react';
 
 const GettingReady: React.FC = () => {
   return (
-    <div className="flex flex-row bg-[#dbccc3] p-5">
-      <div className="pl-32">
+    <div className="flex flex-col lg:flex-row bg-[#dbccc3] items-center p-5">
+      <div className="">
         <img
           src="/static/images/Luna_Lucas.jpg"
           alt="About Me"
