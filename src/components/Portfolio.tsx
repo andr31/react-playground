@@ -14,7 +14,7 @@ const Portfolio: React.FC = () => {
       <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8">
         {photoCards.map((card) => (
           <div className="relative">
-            <PhotoCard src={card.src} label={card.label} />
+            <PhotoCard src={card.src} label={card.label} autoHeight={false} />
             <button className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-black text-white uppercase rounded-full px-6 py-3 text-lg">
               {card.label}
             </button>
