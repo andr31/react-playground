@@ -1,4 +1,5 @@
 import React from 'react';
+import PhotoCard from './PhotoCard.tsx';
 
 const Pricing: React.FC = () => {
   return (
@@ -14,10 +15,10 @@ const Pricing: React.FC = () => {
         </p>
       </div>
       <div>
-        <img
+        <PhotoCard
           src="/static/images/Pricing_portrait.jpg"
-          alt="About Me"
-          className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
+          label="PRICING"
+          autoHeight={true}
         />
       </div>
     </div>

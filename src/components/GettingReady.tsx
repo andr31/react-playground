@@ -1,13 +1,14 @@
 import React from 'react';
+import PhotoCard from './PhotoCard.tsx';
 
 const GettingReady: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row bg-[#dbccc3] items-center p-5">
       <div className="">
-        <img
+        <PhotoCard
           src="/static/images/Luna_Lucas.jpg"
-          alt="About Me"
-          className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
+          label="GETTING_READY"
+          autoHeight={true}
         />
       </div>
       <div className="flex flex-col flex-grow text-center justify-center items-center prose">

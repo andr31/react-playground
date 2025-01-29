@@ -1,12 +1,13 @@
 import React from 'react';
+import PhotoCard from './PhotoCard.tsx';
 
 const AboutMe: React.FC = () => {
   return (
     <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] pt-5 pb-5 prose">
-      <img
+      <PhotoCard
         src="/static/images/Cristina.jpg"
-        alt="About Me"
-        className="w-60 h-82 lg:w-[500px] lg:h-auto rounded-lg"
+        label="PRICING"
+        autoHeight={true}
       />
       <div className="lg:pl-20">
         <h1>I am Cristina</h1>

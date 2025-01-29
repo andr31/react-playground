@@ -1,20 +1,18 @@
 import React from 'react';
 
 interface PhotoCardProps {
-  title: string;
-  description: string;
-  imageUrl: string;
+  src: string;
+  label: string;
+  autoHeight: boolean;
 }
 
-const PhotoCard: React.FC<PhotoCardProps> = ({ title, description, imageUrl }) => {
+const PhotoCard: React.FC<PhotoCardProps> = ({ src, label, autoHeight }) => {
   return (
-    <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-      <img src={imageUrl} alt={title} className="w-full h-48 object-cover" />
-      <div className="p-4">
-        <h3 className="text-xl font-bold text-gray-800">{title}</h3>
-        <p className="text-gray-600">{description}</p>
-      </div>
-    </div>
+    <img
+      src={src}
+      alt={label}
+      className={`w-60 h-82 lg:w-[500px] lg:h-${autoHeight ? 'auto' : '[700px]'} rounded-lg`}
+    />
   );
 };
 
