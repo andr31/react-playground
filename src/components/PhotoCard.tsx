@@ -3,7 +3,7 @@ import React from 'react';
 interface PhotoCardProps {
   src: string;
   label: string;
-  autoHeight: boolean;
+  autoHeight?: boolean;
 }
 
 const PhotoCard: React.FC<PhotoCardProps> = ({ src, label, autoHeight }) => {
