@@ -8,7 +8,7 @@ interface PhotoAlbumProps {
 const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ photos }) => {
   return (
     <PhotoProvider>
-      <div className="flex max-w-96">
+      <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 p-4">
         {photos.map((item, index) => (
           <PhotoView key={index} src={item.src}>
             <img
