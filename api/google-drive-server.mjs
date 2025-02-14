@@ -12,7 +12,7 @@ const app = express();
 app.use(cors());
 
 // Load your service account key JSON file
-const serviceAccountPath = join(__dirname, '/moonwave-c4ef09e72358.json');
+const serviceAccountPath = join(__dirname, '/moonwave-11bbf31e8a82.json');
 const serviceAccount = JSON.parse(
   await fs.readFile(serviceAccountPath, 'utf8')
 );
