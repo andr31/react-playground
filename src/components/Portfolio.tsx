@@ -7,17 +7,17 @@ const Portfolio: React.FC = () => {
 
   const photoCards = [
     {
-      src: '/static/images/Family.jpg',
+      src: '/static/images/Portfolio_family.jpg',
       label: 'FAMILY',
       folderId: '1M4lStPUCYxvnV93nSRWTolGUTYl6FyAB',
     },
     {
-      src: '/static/images/Branding.jpg',
+      src: '/static/images/Portfolio_branding.jpg',
       label: 'BRANDING',
       folderId: '1wEbOFo8khcNNmUgljFJzCTjm4OjGUozl',
     },
     {
-      src: '/static/images/Maternity.jpg',
+      src: '/static/images/Portfolio_maternity.jpg',
       label: 'MATERNITY',
       folderId: '17J_BQUojfwP2ybRpyVx_s_YzVgyQF_ns',
     },

@@ -9,11 +9,10 @@ export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', 'https://moonwave-six.vercel.app');
   res.setHeader('Access-Control-Allow-Methods', 'POST');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
-  console.log('API key:', process.env.VITE_SENDGRID_API_KEY);
   try {
     sgMail.setApiKey(process.env.VITE_SENDGRID_API_KEY);
     const { email, firstName, lastName, message } = req.body;
-    
+
     const msg = {
       to: 'habuc4@gmail.com',
       from: 'habuc4@gmail.com', // CHANGE THIS: Use your verified sender email
@@ -27,12 +26,12 @@ export default async function handler(req, res) {
         <p>${message}</p>
       `
     };
-    
+
     await sgMail.send(msg);
     res.status(200).json({ message: 'Email sent successfully' });
   } catch (error) {
     console.error('Full error:', error);
-    res.status(500).json({ 
+    res.status(500).json({
       error: error.message,
       details: error.response?.body || 'No additional details'
     });

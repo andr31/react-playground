@@ -22,10 +22,10 @@ const AlbumPage: React.FC = () => {
     const fetchAlbumPhotos = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:3001/api/photos/${folderId}`
+          `${import.meta.env.VITE_REACT_APP_API_URL_LOCAL}/api/photos/${folderId}`
         );
         const photos = response.data.map((file: any) => ({
-          src: `http://localhost:3001${file.src}`,
+          src: `${import.meta.env.VITE_REACT_APP_API_URL_LOCAL}${file.src}`,
           label: file.name,
         }));
         setAlbumPhotos(photos);

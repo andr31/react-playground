@@ -37,14 +37,34 @@
 
 @keyframes marquee {
   0% {
-    transform: translateX(100%);
+    transform: translateX(0%);
   }
   100% {
-    transform: translateX(-100%);
+    transform: translateX(-50%);
   }
 }
 
-.animate-marquee {
-  display: inline-block;
-  animation: marquee 60s linear infinite;
+.marquee-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  height: 80px; /* Adjust height as needed */
 }
+
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite; /* Adjust duration as needed */
+}
+
+.marquee-item {
+  display: inline-block;
+  white-space: nowrap;
+  color: white;
+  font-family: 'Inter', sans-serif; /* Ensure you have this font loaded */
+  padding: 0 1rem; /* Add padding to space out the items */
+}
+
