@@ -5,6 +5,8 @@ export default {
     extend: {
       fontFamily: {
         madelyn: ['Madelyn', 'sans-serif'],
+        montez: ['Montez', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
       },
     },
     typography: {

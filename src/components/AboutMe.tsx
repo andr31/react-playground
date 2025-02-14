@@ -3,15 +3,15 @@ import PhotoCard from './PhotoCard.tsx';
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] pt-5 pb-5 prose">
+    <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] pt-5 pb-5">
       <PhotoCard
         src="/static/images/Cristina.jpg"
         label="PRICING"
         autoHeight={true}
       />
       <div className="lg:pl-20">
-        <h1>I am Cristina</h1>
-        <p className="text-lg text-center max-w-lg">
+        <h1 className="font-montez text-5xl">I am Cristina</h1>
+        <p className="text-lg text-center max-w-lg font-inter">
           I am a photographer, a storyteller, an adventurer, and a lover of
           golden sunsets and ocean breezes. I’m a wife to my biggest supporter
           and a mom to two wonderful kids who keep me inspired every day. I’m

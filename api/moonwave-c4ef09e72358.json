@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "moonwave",
+  "private_key_id": "c4ef09e72358e3e87755d968ee9ca85f3e68f265",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCkcmxNDDsiI3Bd\nADPEVrF1iR7RMY5EKVqZ8wSlEPwOS9cmhW/Bx71qDArfYkLT+wd6QyoAwJAtsV4N\nnVJvzno6WtdhlhKY3U6E5KjzYGGpr0y505PfeoiwObHxJwvBYvOvyASwjN1mtimA\nuarIc4QXqPHHDXNnBYaU3W7jg6npe6d61m46ufQ07JGRwFPW7UfCRYwAhBiU69AI\n7WlW1ZMBubRKYdYILKXi1iMMjwqi6nhUBHF5sOV4p9SZyv3usHh6Ww6+P/qVdvx5\n4epcezNswBKIJ+PQ1SEGHhwkAZX7HsLzrz10Uy3sMJjBvVXEYMktRQ/IHyeamrM3\nOtGMywBDAgMBAAECggEAAZCmWzaBKGyWfXU9COLAC+TjCns007HP6qROTQK4p/R1\n9t8H8hvkP5gfdculUge3kslykJof/AGgahgvM85YHAV+ch1PzkihedCWt5yG7Nh9\n90x+L38mwd+8+qdrDF2LSnSxuQRr5dqh9nvycZMTS5wQSiRkoQ6oHqoAQrzonetd\nbSKeVZzcaHE4i5kGFEjgPLZuOgAkWz65E2GskDTXs05Xdx7RSxjCoYieHBAGgVrp\nNpO6lHyBngTLG39qo1oyUEqGy9xcWAovaiYeCQuUGFRiC4sUtwJ8HSzLE9ZeN/1/\nKUarUIhvTEJUFXanR9hCdO5MVUcW5JlzrH/ky1YXIQKBgQDh22+y+UnVQI0PWPXr\n+xeX+qfUnWAI6nggmlN0el2fuFk6btvyFpZjIePEZ8RxfPH3f07Smr2t3Sd7ldkC\nwH09vTp10huouc3lwY7md7i+XVDepnaNY57khCaWHuVxNou1+p3QVLmY5wbtJYyV\nLuOocw8ObelXZI8CoT3rcUGtiwKBgQC6ZN2CSOvzB6Pw0rVP/Ckz/pN67wJ+Jqqr\novKilju2Ps4ok2c6/jrm7ZVJX4v6RHdF7+GXRv3Yo06h1nbKyMVeEkWtZybu1dB7\nFUbcXZa3eQP7RUL/fhNMPoQkx2tHGSAfaz2/Ehl5w2kW/1Um/ZQbMjhNDFh0hD2I\n2fKEYtM/KQKBgEKPmuGR2hKAzZGCVCdRfmiJtEBSiOTXxMNG9+VR0pmpiJJR7Xvw\n8C0S5b8SHbCcc+rOl/o1JEVC8cnYJXZMKByz0bC7VO9qoqVdX7HIAqgHdDfJsxKE\nE2WhFIYVYOT2gEIHM88byP6oxz/IWx/0C5+vGPbVqXjZ59OMlWT3obV1AoGASPIQ\nflxresESt7y+mH7m4SJQNVw0bYpUYLd0nYyN8dTCeb62N7Am/Rkdw4lRDrCcvRIU\nB1ARKCdBLrTv6IyKMTaVbjdgVTf4TzMUeEloIoWJuVxxy+tbQgt1S69/nGOI3sLp\nd01uCukex5FFkezLeZk9z2l1dKQMMPKappTGd4ECgYEAvxFoRWfz2SE2IHC8K92e\neujCTX7pLD73pBBTDVUeF59wXazUnSJ2BWOk0ubxgq5xnpi41omwfILBn4K4QTCJ\nDaVIiiFz5jFbMaxi/5av2pqTLCuAGxDuPDZl/5VQSSLpeJ+Uc9LzUCYAxKduceUk\nmnB4dI8mHWLZfg3EVUkwUkQ=\n-----END PRIVATE KEY-----\n",
+  "client_email": "moonwave@moonwave.iam.gserviceaccount.com",
+  "client_id": "102409802755741544145",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/moonwave%40moonwave.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}

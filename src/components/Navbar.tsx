@@ -17,7 +17,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo Section */}
         <div className="font-bold text-white">
-          <h1 className="font-madelyn text-4xl sm:text-5xl md:text-6xl">
+          <h1 className="font-montez text-4xl sm:text-5xl md:text-6xl">
             Moonwave Photography
           </h1>
         </div>
