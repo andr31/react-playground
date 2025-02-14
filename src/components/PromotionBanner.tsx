@@ -5,12 +5,14 @@ interface PromotionBannerProps {
 }
 
 const PromotionBanner: React.FC<PromotionBannerProps> = ({ items }) => {
+  // Duplicate the items array to create a seamless scrolling effect
+  const duplicatedItems = [...items, ...items];
 
   return (
-    <div className="w-full bg-black overflow-hidden flex justify-center items-center">
-      <div className="whitespace-nowrap animate-marquee">
-        {items.map((item, index) => (
-          <div key={index} className="inline-block align-top w-72 text-white mx-4 my-2 whitespace-normal text-center">
+    <div className="marquee-container">
+      <div className="marquee-content">
+        {duplicatedItems.map((item, index) => (
+          <div key={index} className="marquee-item">
             {item}
           </div>
         ))}

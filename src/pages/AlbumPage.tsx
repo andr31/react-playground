@@ -1,18 +1,58 @@
-// import { useParams } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import PhotoAlbum from '../components/PhotoAlbum.tsx';
+import axios from 'axios';
+import PhotoAlbum from '../components/PhotoAlbum';
 
-const AlbumPage = () => {
+interface PhotoData {
+  src: string;
+  label: string;
+}
+
+const AlbumPage: React.FC = () => {
   const location = useLocation();
-  const { photoCards } = location.state || { photoCards: [] };
-  // const { albumId } = useParams();
-  // const photos = [
-  //   { src: `/static/images/${albumId}1.jpg`, label: `${albumId} Photo 1` },
-  //   { src: `/static/images/${albumId}2.jpg`, label: `${albumId} Photo 2` },
-  //   // Add more photos as needed
-  // ];
+  const { folderId } = location.state as {
+    folderId: string;
+  };
 
-  return <PhotoAlbum photos={photoCards} />;
+  const [albumPhotos, setAlbumPhotos] = useState<PhotoData[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+
+  useEffect(() => {
+    const fetchAlbumPhotos = async () => {
+      try {
+        const response = await axios.get(
+          `${import.meta.env.VITE_REACT_APP_API_URL_LOCAL}/api/photos/${folderId}`
+        );
+        const photos = response.data.map((file: any) => ({
+          src: `${import.meta.env.VITE_REACT_APP_API_URL_LOCAL}${file.src}`,
+          label: file.name,
+        }));
+        setAlbumPhotos(photos);
+        setIsLoading(false);
+      } catch (error) {
+        console.error('Error fetching album photos:', error);
+        setError('Failed to load album photos. Please try again later.');
+        setIsLoading(false);
+      }
+    };
+
+    fetchAlbumPhotos();
+  }, [folderId]);
+
+  if (isLoading) {
+    return <div>Loading album...</div>;
+  }
+
+  if (error) {
+    return <div>{error}</div>;
+  }
+
+  return (
+    <div>
+      <PhotoAlbum photos={albumPhotos} />
+    </div>
+  );
 };
 
 export default AlbumPage;
