@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import axios from 'axios';
 import PhotoAlbum from '../components/PhotoAlbum';
+import { FaSpinner } from 'react-icons/fa';
 
 interface PhotoData {
   src: string;
@@ -41,9 +42,13 @@ const AlbumPage: React.FC = () => {
   }, [folderId]);
 
   if (isLoading) {
-    return <div>Loading album...</div>;
+    return (
+      <div className="flex items-center justify-center h-screen">
+        <FaSpinner className="animate-spin text-4xl text-gray-600" />
+        <span className="ml-4 text-xl text-gray-600">Loading album...</span>
+      </div>
+    );
   }
-
   if (error) {
     return <div>{error}</div>;
   }

@@ -97,7 +97,10 @@ const ContactForm: React.FC<ContactFormProps> = () => {
             </div>
           </div>
           <div className="flex justify-center">
-            <button type="submit" className="p-2 bg-black text-white rounded">
+            <button
+              type="submit"
+              className="px-10 py-6 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-300 mt-5"
+            >
               Send
             </button>
           </div>

@@ -3,7 +3,7 @@ import PhotoCard from './PhotoCard.tsx';
 
 const AboutMe: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] pt-5 pb-5">
+    <div className="flex flex-col lg:flex-row items-center justify-center bg-[#dbccc3] p-5 pb-5">
       <PhotoCard
         src="/static/images/Cristina.jpg"
         label="PRICING"

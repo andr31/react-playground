@@ -27,7 +27,7 @@ const Pricing: React.FC = () => {
           EXPLORE OPTIONS
         </button>
       </div>
-      <div>
+      <div className="hidden lg:block">
         <PhotoCard
           src="/static/images/Pricing_portrait.jpg"
           label="PRICING"

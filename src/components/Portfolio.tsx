@@ -33,13 +33,13 @@ const Portfolio: React.FC = () => {
 
   return (
     <div className="bg-[#e8e8e1] pt-5 pb-28 p-5">
-      <h1 className="font-montez text-5xl mb-8">Portfolio</h1>
+      <h1 className="font-montez text-5xl mb-8 mt-5">Portfolio</h1>
       <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8">
         {photoCards.map((card) => (
           <div key={card.label} className="relative">
             <PhotoCard src={card.src} label={card.label} autoHeight={false} />
             <button
-              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 bg-black text-white uppercase rounded-full px-6 py-3 text-lg hover:bg-gray-800 transition-colors duration-300"
+              className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-1/2 px-10 py-6 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-300 mt-5"
               onClick={() => handleButtonClick(card.label, card.folderId)}
             >
               {card.label}
