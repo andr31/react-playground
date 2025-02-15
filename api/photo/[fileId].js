@@ -20,7 +20,7 @@ async function initializeDrive() {
 
 export default async function handler(req, res) {
   try {
-    const { fileId } = req.query;
+    const { fileId } = req.query; // Use req.query for fileId in Vercel
     const drive = await initializeDrive();
 
     if (req.method === 'GET' && fileId) {
