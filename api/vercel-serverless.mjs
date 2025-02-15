@@ -37,7 +37,7 @@ export default async function handler(req, res) {
         const files = response.data.files.map((file) => ({
           id: file.id,
           name: file.name,
-          src: `/api/photos?fileId=${file.id}`,
+          src: `/api/photo?fileId=${file.id}`,
         }));
 
         res.status(200).json(files);
