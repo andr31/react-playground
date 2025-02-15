@@ -20,11 +20,21 @@ const IndexPage = () => {
         <main className="container mx-auto px-4 py-8"></main>
       </div>
       <PromotionBannerProps items={bannerItems}></PromotionBannerProps>
-      <AboutMe></AboutMe>
-      <Portfolio></Portfolio>
-      <GettingReady></GettingReady>
-      <Pricing></Pricing>
-      <ContactForm></ContactForm>
+      <div id="about">
+        <AboutMe></AboutMe>
+      </div>
+      <div id="portfolio">
+        <Portfolio></Portfolio>
+      </div>
+      <div id="getting-ready">
+        <GettingReady></GettingReady>
+      </div>
+      <div id="pricing">
+        <Pricing></Pricing>
+      </div>
+      <div id="contact">
+        <ContactForm></ContactForm>
+      </div>
       <WorkInProgress></WorkInProgress>
     </>
   );

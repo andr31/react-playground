@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { FaFacebook, FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
+import { Link as ScrollLink } from 'react-scroll';
 
 interface NavbarProps {
   menuItems: { name: string; link: string }[];
@@ -18,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
         {/* Logo Section */}
         <div className="font-bold text-white">
           <h1 className="font-montez text-4xl sm:text-5xl md:text-6xl">
-            Moonwave Photography
+            Cristina Batrincea Photography
           </h1>
         </div>
 
@@ -37,13 +38,16 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
           className={`flex-col sm:flex-row sm:flex ${isOpen ? 'flex' : 'hidden'} sm:space-x-4 mt-4 sm:mt-0`}
         >
           {menuItems.map((item, index) => (
-            <a
+            <ScrollLink
               key={index}
-              href={item.link}
-              className="text-white hover:text-[#ac440c] text-sm sm:text-base"
+              to={item.link}
+              smooth={true}
+              duration={500}
+              offset={-100}
+              className="text-white hover:text-[#ac440c] text-sm sm:text-base cursor-pointer"
             >
               {item.name}
-            </a>
+            </ScrollLink>
           ))}
         </div>
 
@@ -61,12 +65,15 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
           >
             <FaInstagram size={24} />
           </a>
-          <a
-            href="/book"
+          <ScrollLink
+            to="contact"
+            smooth={true}
+            duration={500}
+            offset={-100}
             className="bg-[#ac440b] text-white px-4 py-2 sm:px-6 sm:py-3 rounded-full text-sm sm:text-lg hover:text-black"
           >
             BOOK
-          </a>
+          </ScrollLink>
         </div>
       </div>
     </nav>

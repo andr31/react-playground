@@ -26,4 +26,4 @@ dist-ssr
 .env.*.local
 
 #api
-moonwave-11bbf31e8a82.json
+api/moonwave-11bbf31e8a82.json

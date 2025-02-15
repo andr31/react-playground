@@ -8,11 +8,11 @@ interface LayoutProps {
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
   const menuItems = [
-    { name: 'ABOUT', link: '/about' },
-    { name: 'PORTFOLIO', link: '/portfolio' },
-    { name: 'PRICING', link: '/pricing' },
-    { name: 'GETTING READY', link: '/getting-ready' },
-    { name: 'CONTACT', link: '/contact' },
+    { name: 'ABOUT', link: 'about' },
+    { name: 'PORTFOLIO', link: 'portfolio' },
+    { name: 'PRICING', link: 'pricing' },
+    { name: 'GETTING READY', link: 'getting-ready' },
+    { name: 'CONTACT', link: 'contact' },
   ];
 
   return (
