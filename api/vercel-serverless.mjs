@@ -1,20 +1,14 @@
-// api/google-drive-server.mjs
-import express from 'express';
-import cors from 'cors';
 import { google } from 'googleapis';
 import { fileURLToPath } from 'url';
 import { dirname, join } from 'path';
 import fs from 'fs/promises';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
-
-const app = express();
-app.use(cors());
-
-let drive;
-
+// Helper function to initialize Google Drive
 async function initializeDrive() {
+  console.log(process.env.VITE_GOOGLE_SERVICE_ACCOUNT);
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = dirname(__filename);
+
   // Load your service account key JSON file
   const serviceAccountPath = join(
     __dirname,
@@ -32,54 +26,62 @@ async function initializeDrive() {
     ['https://www.googleapis.com/auth/drive.readonly']
   );
 
-  drive = google.drive({ version: 'v3', auth });
+  return google.drive({ version: 'v3', auth });
 }
 
-initializeDrive();
+export default async function handler(req, res) {
+  const {
+    query: { folderId, fileId },
+    method,
+  } = req;
 
-app.get('/api/photos/:folderId', async (req, res) => {
-  try {
-    const response = await drive.files.list({
-      q: `'${req.params.folderId}' in parents and mimeType contains 'image/'`,
-      fields: 'files(id, name)',
-    });
+  const drive = await initializeDrive();
 
-    const files = response.data.files.map((file) => ({
-      id: file.id,
-      name: file.name,
-      src: `/api/photo/${file.id}`,
-    }));
+  if (method === 'GET' && folderId) {
+    try {
+      const response = await drive.files.list({
+        q: `'${folderId}' in parents and mimeType contains 'image/'`,
+        fields: 'files(id, name)',
+      });
 
-    res.json(files);
-  } catch (error) {
-    console.error('Error fetching photos:', error);
-    res.status(500).json({ error: 'Failed to fetch photos' });
+      const files = response.data.files.map((file) => ({
+        id: file.id,
+        name: file.name,
+        src: `/api/photos?fileId=${file.id}`,
+      }));
+
+      res.status(200).json(files);
+    } catch (error) {
+      console.error('Error fetching photos:', error);
+      res.status(500).json({ error: 'Failed to fetch photos' });
+    }
+  } else if (method === 'GET' && fileId) {
+    try {
+      const file = await drive.files.get({
+        fileId: fileId,
+        fields: 'mimeType',
+      });
+      res.setHeader('Content-Type', file.data.mimeType);
+
+      const response = await drive.files.get(
+        { fileId: fileId, alt: 'media' },
+        { responseType: 'stream' }
+      );
+
+      response.data
+        .on('end', () => {
+          console.log('Done');
+        })
+        .on('error', (err) => {
+          console.log('Error', err);
+        })
+        .pipe(res);
+    } catch (error) {
+      console.error('Error fetching photo:', error);
+      res.status(500).json({ error: 'Failed to fetch photo' });
+    }
+  } else {
+    res.setHeader('Allow', ['GET']);
+    res.status(405).end(`Method ${method} Not Allowed`);
   }
-});
-
-app.get('/api/photo/:fileId', async (req, res) => {
-  try {
-    const fileId = req.params.fileId;
-    const file = await drive.files.get({ fileId: fileId, fields: 'mimeType' });
-    res.setHeader('Content-Type', file.data.mimeType);
-
-    const response = await drive.files.get(
-      { fileId: fileId, alt: 'media' },
-      { responseType: 'stream' }
-    );
-
-    response.data
-      .on('end', () => {
-        console.log('Done');
-      })
-      .on('error', (err) => {
-        console.log('Error', err);
-      })
-      .pipe(res);
-  } catch (error) {
-    console.error('Error fetching photo:', error);
-    res.status(500).json({ error: 'Failed to fetch photo' });
-  }
-});
-
-export default app;
+}
