@@ -5,14 +5,14 @@ import fs from 'fs/promises';
 
 // Helper function to initialize Google Drive
 async function initializeDrive() {
-  console.log(process.env.VITE_GOOGLE_SERVICE_ACCOUNT);
+  console.log('Service account', process.env.GOOGLE_SERVICE_ACCOUNT);
   const __filename = fileURLToPath(import.meta.url);
   const __dirname = dirname(__filename);
 
   // Load your service account key JSON file
   const serviceAccountPath = join(
     __dirname,
-    process.env.VITE_GOOGLE_SERVICE_ACCOUNT
+    process.env.GOOGLE_SERVICE_ACCOUNT
   );
   const serviceAccount = JSON.parse(
     await fs.readFile(serviceAccountPath, 'utf8')
