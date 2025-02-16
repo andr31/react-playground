@@ -10,7 +10,7 @@ const AboutMe: React.FC = () => {
         autoHeight={true}
       />
       <div className="lg:pl-20">
-        <h1 className="font-montez text-5xl">I am Cristina</h1>
+        <h1 className="mt-5 font-montez text-5xl lg:mt-0">I am Cristina</h1>
         <p className="text-lg text-center max-w-lg font-inter">
           I am a photographer, a storyteller, an adventurer, and a lover of
           golden sunsets and ocean breezes. I’m a wife to my biggest supporter

@@ -13,14 +13,14 @@ const GettingReady: React.FC = () => {
       </div>
       <div className="flex flex-col flex-grow text-center justify-center items-center text-lg">
         <section>
-          <h1 className="font-montez text-5xl">Getting Ready</h1>
+          <h1 className="mt-5 font-montez text-5xl lg:mt-0">Getting Ready</h1>
           <p>
             Let’s make your photos amazing! Here are some simple tips to help
             you look and feel your best.
           </p>
         </section>
-        <div className="flex flex-row justify-around w-full mt-5">
-          <section className="flex flex-col items-center">
+        <div className="flex flex-col justify-around w-full lg:flex-row mt-5">
+          <section className="mt-5 flex flex-col items-center lg:mt-0">
             <h1 className="font-montez text-5xl">What to do</h1>
             <h2 className="font-bold">Coordinate, Don't Match</h2>
             <p className="max-w-96">
@@ -39,8 +39,8 @@ const GettingReady: React.FC = () => {
               laugh, and have fun, not feel stiff or uncomfortable.
             </p>
           </section>
-          <section className="flex flex-col items-center">
-            <h1 className="font-montez text-5xl">What to ship</h1>
+          <section className="mt-5 flex flex-col items-center lg:mt-0">
+            <h1 className="font-montez text-5xl">What to skip</h1>
             <h2 className="font-bold">Busy Patterns and Logos</h2>
             <p className="max-w-96">
               SSimple outfits keep the focus on you and not on a big logo or
@@ -59,7 +59,9 @@ const GettingReady: React.FC = () => {
           </section>
         </div>
         <section className="mt-10">
-          <h1 className="text-2xl font-inter">Most Important Tip: Relax and have fun!</h1>
+          <h1 className="text-2xl font-inter">
+            Most Important Tip: Relax and have fun!
+          </h1>
           <p>
             This session is all about capturing you. If you’re comfortable and
             enjoying yourself, your photos will be full of personality and joy.

@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import Footer from '../components/Footer.tsx';
 import Navbar from './Navbar.tsx';
+import useScrollToTop from '../hooks/useScrollToTop.tsx';
 
 interface LayoutProps {
   children: ReactNode;
@@ -14,6 +15,7 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
     { name: 'GETTING READY', link: 'getting-ready' },
     { name: 'CONTACT', link: 'contact' },
   ];
+  useScrollToTop();
 
   return (
     <div className="flex flex-col min-h-screen">

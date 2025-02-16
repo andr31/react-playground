@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
-import { Link as ScrollLink, scroller } from 'react-scroll';
+import {
+  animateScroll as scroll,
+  Link as ScrollLink,
+  scroller,
+} from 'react-scroll';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
@@ -43,7 +47,13 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
     <nav className="bg-gray-800 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
         {/* Logo Section */}
-        <div className="font-bold text-white">
+        <div
+          className="font-bold text-white"
+          onClick={() => {
+            navigate('/');
+            scroll.scrollToTop();
+          }}
+        >
           <h1 className="font-montez text-4xl sm:text-5xl md:text-6xl">
             Cristina Batrincea Photography
           </h1>
@@ -55,7 +65,7 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
             onClick={toggleMenu}
             className="text-white focus:outline-none"
           >
-            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
+            {isOpen ? '' : <FaBars size={24} />}
           </button>
         </div>
 
