@@ -1,4 +1,3 @@
-import WorkInProgress from '../components/WorkInProgress.tsx';
 import ContactForm from '../components/ContactForm.tsx';
 import PromotionBannerProps from '../components/PromotionBanner.tsx';
 import AboutMe from '../components/AboutMe.tsx';
@@ -35,7 +34,6 @@ const IndexPage = () => {
       <div id="contact">
         <ContactForm></ContactForm>
       </div>
-      <WorkInProgress></WorkInProgress>
     </>
   );
 };

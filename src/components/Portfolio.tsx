@@ -2,6 +2,12 @@ import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import PhotoCard from './PhotoCard';
 
+const DRIVE_FOLDER_ID = {
+  FAMILY: '1Hq9SBC97JGH0MUDu-yhn3lJnZOf9MLON',
+  BRANDING: '19dK9XLAjEPn3FPf3hRd8EaygEfYhzPIw',
+  MATERNITY: '1IGFn-SUvYhq_XZSAVXnY20Lp4gjyFmAN',
+};
+
 const Portfolio: React.FC = () => {
   const navigate = useNavigate();
 
@@ -9,17 +15,17 @@ const Portfolio: React.FC = () => {
     {
       src: '/static/images/Portfolio_family.jpg',
       label: 'FAMILY',
-      folderId: '1M4lStPUCYxvnV93nSRWTolGUTYl6FyAB',
+      folderId: DRIVE_FOLDER_ID.FAMILY, // '1M4lStPUCYxvnV93nSRWTolGUTYl6FyAB',
     },
     {
       src: '/static/images/Portfolio_branding.jpg',
       label: 'BRANDING',
-      folderId: '1wEbOFo8khcNNmUgljFJzCTjm4OjGUozl',
+      folderId: DRIVE_FOLDER_ID.BRANDING, // '1wEbOFo8khcNNmUgljFJzCTjm4OjGUozl',
     },
     {
       src: '/static/images/Portfolio_maternity.jpg',
       label: 'MATERNITY',
-      folderId: '17J_BQUojfwP2ybRpyVx_s_YzVgyQF_ns',
+      folderId: DRIVE_FOLDER_ID.MATERNITY, // '17J_BQUojfwP2ybRpyVx_s_YzVgyQF_ns',
     },
   ];
 
