@@ -14,7 +14,7 @@ const Packages: React.FC = () => {
           />
           <div className="basic-session flex flex-col items-center text-center mt-5">
             <h2 className="font-bold text-2xl">Basic Session</h2>
-            <p className="font-inter">
+            <p className="font-inter m-[5px] lg:m-0">
               Ideal for quick family portraits or individual branding shots.
             </p>
             <p className="font-inter mt-5">45 minutes long</p>
@@ -30,7 +30,7 @@ const Packages: React.FC = () => {
           />
           <div className="standard-session flex flex-col items-center text-center mt-5">
             <h2 className="font-bold text-2xl">Standard Session</h2>
-            <p className="font-inter">
+            <p className="font-inter m-[5px] lg:m-0">
               Perfect for family groups, maternity shoots, or personal branding
               sessions.
             </p>
@@ -47,7 +47,7 @@ const Packages: React.FC = () => {
           />
           <div className="extended-session flex flex-col items-center text-center mt-5">
             <h2 className="font-bold text-2xl">Extended Session</h2>
-            <p className="font-inter">
+            <p className="font-inter m-[5px] lg:m-0">
               Comprehensive session suitable for multiple outfit changes,
               various locations, or extended family groups.
             </p>

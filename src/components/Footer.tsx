@@ -26,13 +26,12 @@ const Footer: React.FC = () => {
 
         {/* Second Section */}
         <div className="text-center">
-          <div>123-456-789</div>
-          <div>moonwavephotography@gmail.com</div>
+          <span>moonwavephotography@gmail.com</span>
         </div>
 
         {/* Third Section */}
         <div className="max-w-[200px] text-center">
-          Photographer in Tampa and Wesley Chapel areas
+          Photographer in Tampa and Wesley Chapel Areas
         </div>
       </div>
     </div>
