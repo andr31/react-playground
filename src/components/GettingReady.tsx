@@ -58,7 +58,7 @@ const GettingReady: React.FC = () => {
             </p>
           </section>
         </div>
-        <section className="mt-10">
+        <section className="mt-10 p-6 rounded-lg flex flex-col items-center text-center shadow-md bg-[#e8e8e1]">
           <h1 className="text-2xl font-inter">
             Most Important Tip: Relax and have fun!
           </h1>
