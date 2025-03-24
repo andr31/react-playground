@@ -14,8 +14,8 @@ export default async function handler(req, res) {
     const { email, firstName, lastName, message } = req.body;
 
     const msg = {
-      to: 'habuc4@gmail.com',
-      from: 'habuc4@gmail.com', // CHANGE THIS: Use your verified sender email
+      to: 'cristinabat.photography@gmail.com',
+      from: 'cristinabat.photography@gmail.com', // CHANGE THIS: Use your verified sender email
       replyTo: email, // This allows replies to go to the form submitter
       subject: `Request Moonwave from ${firstName} ${lastName}`,
       text: `Message from: ${email}\n\n${message}`,
