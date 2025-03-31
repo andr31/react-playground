@@ -8,6 +8,16 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
   const [emailError, setEmailError] = useState('');
+  const [submitStatus, setSubmitStatus] = useState<
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
+  const resetForm = () => {
+    setFirstName('');
+    setLastName('');
+    setEmail('');
+    setMessage('');
+    setEmailError('');
+  };
 
   const handleEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value;
@@ -23,6 +33,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
     e.preventDefault();
 
     if (!emailError) {
+      setSubmitStatus('loading');
       try {
         const response = await fetch('/api/send-email', {
           method: 'POST',
@@ -38,11 +49,16 @@ const ContactForm: React.FC<ContactFormProps> = () => {
         });
 
         const data = await response.json();
-        console.log('Email sent:', data);
-        // Handle success (maybe show a success message to user)
+        if (response.ok) {
+          setSubmitStatus('success');
+          resetForm();
+          setTimeout(() => setSubmitStatus('idle'), 5000);
+        } else {
+          throw new Error(data.error || 'Failed to send message');
+        }
       } catch (error) {
         console.error('Error sending email:', error);
-        // Handle error (show error message to user)
+        setSubmitStatus('error');
       }
     }
   };
@@ -55,6 +71,16 @@ const ContactForm: React.FC<ContactFormProps> = () => {
             <div className="mb-4 text-center font-bold text-2xl">
               Let's Talk!
             </div>
+            {submitStatus === 'success' && (
+              <div className="mb-4 p-4 bg-green-100 text-green-700 rounded-lg text-center">
+                Thank you for your message! We'll get back to you soon.
+              </div>
+            )}
+            {submitStatus === 'error' && (
+              <div className="mb-4 p-4 bg-red-100 text-red-700 rounded-lg text-center">
+                Sorry, something went wrong. Please try again.
+              </div>
+            )}
             <div className="mb-4">
               <label className="block font-bold mb-2">First Name:</label>
               <input
@@ -99,9 +125,14 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           <div className="flex justify-center">
             <button
               type="submit"
-              className="px-10 py-6 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-300 mt-5"
+              disabled={submitStatus === 'loading'}
+              className={`px-10 py-6 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition-colors duration-300 mt-5 ${
+                submitStatus === 'loading'
+                  ? 'opacity-50 cursor-not-allowed'
+                  : ''
+              }`}
             >
-              Send
+              {submitStatus === 'loading' ? 'Sending...' : 'Send'}
             </button>
           </div>
         </form>
