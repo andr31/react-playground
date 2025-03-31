@@ -16,9 +16,8 @@ export default async function handler(req, res) {
     const resend = new Resend(process.env.VITE_RESEND_API_KEY);
     const { email, firstName, lastName, message } = req.body;
 
-    // Add timeout to the email sending operation
-    const emailPromise = resend.emails.send({
-      from: 'Mooonwave Client <cristinabat.photography@gmail.com>',
+    const { data, error } = await resend.emails.send({
+      from: 'onboarding@resend.dev',
       to: ['cristinabat.photography@gmail.com'],
       subject: `Request Moonwave from ${firstName} ${lastName}`,
       html: `
@@ -29,23 +28,15 @@ export default async function handler(req, res) {
       `,
     });
 
-    // Set a timeout of 8 seconds (leaving 2 seconds buffer)
-    const timeoutPromise = new Promise((_, reject) => {
-      setTimeout(() => reject(new Error('Email sending timeout')), 8000);
-    });
-
-    const { data, error } = await Promise.race([emailPromise, timeoutPromise]);
-
     if (error) {
-      console.error({ error });
-      return res.status(500).json({ error: 'Failed to send email' });
+      return console.error({ error });
     }
 
-    return res.status(200).json({ success: true, data });
+    console.log({ data });
   } catch (error) {
     console.error('Full error:', error);
-    return res.status(500).json({
-      error: error.message || 'Internal server error',
+    res.status(500).json({
+      error: error.message,
       details: error.response?.body || 'No additional details',
     });
   }
