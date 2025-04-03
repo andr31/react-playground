@@ -5,7 +5,7 @@ const Packages: React.FC = () => {
   return (
     <div className="flex flex-col justify-evenly bg-[#e8e8e1]">
       <h1 className="font-montez text-5xl text-center mt-5">Package options</h1>
-      <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 lg:space-x-8 mt-5">
+      <div className="flex flex-col lg:flex-row justify-center items-center space-y-8 lg:space-y-0 mt-5">
         <div className="flex flex-col items-center w-full lg:w-1/3">
           <PhotoCard
             src="/static/images/Lucas_1.jpg"
