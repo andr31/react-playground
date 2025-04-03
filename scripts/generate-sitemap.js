@@ -2,17 +2,7 @@ import { SitemapStream } from 'sitemap';
 import { Readable } from 'stream';
 import { writeFileSync } from 'fs';
 
-// Define your album IDs
-const DRIVE_FOLDER_ID = {
-  FAMILY: '1Hq9SBC97JGH0MUDu-yhn3lJnZOf9MLON',
-  BRANDING: '19dK9XLAjEPn3FPf3hRd8EaygEfYhzPIw',
-  MATERNITY: '1IGFn-SUvYhq_XZSAVXnY20Lp4gjyFmAN',
-};
-const albumIds = [
-  DRIVE_FOLDER_ID.FAMILY,
-  DRIVE_FOLDER_ID.BRANDING,
-  DRIVE_FOLDER_ID.MATERNITY,
-]; // Replace with actual album IDs
+const albumIds = ['family', 'branding', 'maternity']; // Replace with actual album IDs
 
 // Define your routes
 const links = [
