@@ -23,12 +23,12 @@ const Footer: React.FC = () => {
               <FaFacebook size={24} />
             </a>
           </div>
-          <span>@moonwave.photography</span>
+          <span>@cristinabat.photography</span>
         </div>
 
         {/* Second Section */}
         <div className="text-center">
-          <span>moonwavephotography@gmail.com</span>
+          <span>cristinabat.photography@gmail.com</span>
         </div>
 
         {/* Third Section */}
