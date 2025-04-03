@@ -5,14 +5,14 @@ const StructuredData = () => {
     '@context': 'https://schema.org',
     '@type': 'LocalBusiness',
     name: 'Cristina Batrincea Photography',
-    image: ['https://moonwave-six.vercel.app/static/images/Cover_wide.jpg'],
+    image: ['https://cristinabat.com/static/images/Cover_wide.jpg'],
     address: {
       '@type': 'PostalAddress',
       addressLocality: 'Tampa',
       addressRegion: 'FL',
       addressCountry: 'US',
     },
-    url: 'https://moonwave-six.vercel.app',
+    url: 'https://cristinabat.com',
     telephone: '+1-XXX-XXX-XXXX',
     priceRange: '$$',
   };

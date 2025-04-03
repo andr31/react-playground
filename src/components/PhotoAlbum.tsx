@@ -13,7 +13,7 @@ const PhotoAlbum: React.FC<PhotoAlbumProps> = ({ photos }) => {
           <PhotoView key={index} src={item.src}>
             <img
               src={item.src}
-              alt={`Moonwave photography - ${item.label}`}
+              alt={`Cristinabat photography - ${item.label}`}
               className="cursor-pointer transition-transform duration-300 hover:scale-105"
             />
           </PhotoView>

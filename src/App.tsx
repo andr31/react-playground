@@ -14,7 +14,8 @@ function App() {
       <Router>
         <Helmet>
           <title>
-            Moonwave Photography | Professional Photography in Portland
+            Cristinabat Photography | Professional Photography in Tampa and
+            Wesley Chapel
           </title>
           <meta
             name="description"

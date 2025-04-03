@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               <FaFacebook size={24} />
             </a>
           </div>
-          <span>@cristinabat.photography</span>
+          <span>@moonwave.photography</span>
         </div>
 
         {/* Second Section */}
