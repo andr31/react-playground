@@ -3,7 +3,7 @@ import PhotoCard from './PhotoCard.tsx';
 
 const GettingReady: React.FC = () => {
   return (
-    <div className="flex flex-col lg:flex-row bg-[#dbccc3] items-center p-5">
+    <div className="flex flex-col lg:flex-row bg-[#dbccc3] items-center justify-evenly p-5">
       <div className="">
         <PhotoCard
           src="/static/images/Luna_Lucas.jpg"
@@ -11,7 +11,7 @@ const GettingReady: React.FC = () => {
           autoHeight={true}
         />
       </div>
-      <div className="flex flex-col flex-grow text-center justify-center items-center text-lg">
+      <div className="flex flex-col text-center justify-center items-center text-lg">
         <section>
           <h1 className="mt-5 font-montez text-5xl lg:mt-0">Getting Ready</h1>
           <p>

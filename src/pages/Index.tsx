@@ -31,7 +31,7 @@ const IndexPage = () => {
       <div id="pricing">
         <Pricing></Pricing>
       </div>
-      <div id="contact">
+      <div id="contact" className="bg-[#e8e8e1]">
         <ContactForm></ContactForm>
       </div>
     </>

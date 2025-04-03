@@ -64,7 +64,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
   };
 
   return (
-    <div className="flex justify-center bg-[#e8e8e1] flex-col lg:flex-row lg:ml-10">
+    <div className="flex justify-evenly bg-[#e8e8e1] flex-col lg:flex-row lg:ml-10">
       <div className="flex-grow max-w-4xl">
         <form onSubmit={handleSubmit} className="bg-[#dbccc3] p-5">
           <div className="m-10">
@@ -137,7 +137,7 @@ const ContactForm: React.FC<ContactFormProps> = () => {
           </div>
         </form>
       </div>
-      <div className="flex-grow min-w-fit pb-10 pt-5 lg:pb-0 lg:pt-0">
+      <div className="min-w-fit pb-10 pt-5 lg:pb-0 lg:pt-0">
         <div className="hidden md:flex-row md:flex md:h-full md:justify-center md:items-center">
           {/*<h1 className="absolute mb-[320px] font-madelyn text-4xl sm:text-5xl md:text-6xl"> Craft The Perfect Memory</h1>*/}
           <img
