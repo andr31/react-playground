@@ -14,10 +14,9 @@ const Pricing: React.FC = () => {
         <h1 className="font-montez text-5xl">Pricing</h1>
         <p className="max-w-96 font-inter mt-5">
           Each photograph tells a story, and I’m here to help you capture yours.
-          Whether it's a family session, a milestone celebration, or your
-          wedding day, your memories deserve to be beautifully preserved.
-          Explore my packages below, and let’s create something timeless
-          together.
+          Whether it's a family session, a milestone celebration, or a special
+          ocasion, your memories deserve to be beautifully preserved. Explore my
+          packages below, and let’s create something timeless together.
         </p>
         <button
           type="submit"
