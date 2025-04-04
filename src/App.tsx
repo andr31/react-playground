@@ -19,7 +19,7 @@ function App() {
           </title>
           <meta
             name="description"
-            content="Professional photography services in Portland, Oregon. Specializing in wedding photography, family portraits, and special events."
+            content="Professional photography services in Tampa and Wesley Chapel, Florida. Specializing in family portraits, branding and special events."
           />
         </Helmet>
         <StructuredData />
