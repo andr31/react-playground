@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col items-center md:flex-row space-x-2">
           <div className="flex flex-row space-x-4">
             <a
-              href="https://www.instagram.com/moonwave.photography/?hl=en"
+              href="https://www.instagram.com/cristinabatphotography/"
               target="_blank"
               rel="noopener noreferrer"
             >

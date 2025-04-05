@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { FaFacebook, FaInstagram, FaBars, FaTimes } from 'react-icons/fa';
-import {
-  animateScroll as scroll,
-  Link as ScrollLink,
-  scroller,
-} from 'react-scroll';
+import { animateScroll as scroll, scroller } from 'react-scroll';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 interface NavbarProps {
@@ -46,79 +42,153 @@ const Navbar: React.FC<NavbarProps> = ({ menuItems }) => {
   return (
     <nav className="bg-gray-800 sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4 flex justify-between items-center">
+        {/* Left Menu Items */}
+        <div className="hidden sm:flex sm:space-x-4">
+          {menuItems
+            .slice(0, Math.ceil(menuItems.length / 2))
+            .map((item, index) => (
+              <div
+                key={index}
+                className="text-white hover:text-[#ac440c] text-lg sm:text-base cursor-pointer"
+                onClick={() => handleMenuItemClick(item.link)}
+              >
+                {item.name}
+              </div>
+            ))}
+        </div>
+
         {/* Logo Section */}
         <div
-          className="font-bold text-white"
+          className="font-bold text-white text-center cursor-pointer"
           onClick={() => {
             navigate('/');
             scroll.scrollToTop();
           }}
         >
-          <h1 className="font-montez text-4xl sm:text-5xl md:text-6xl">
+          <h1 className="font-montez text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl">
             Cristina Batrincea Photography
           </h1>
         </div>
 
+        {/* Right Menu Items */}
+        <div className="hidden sm:flex sm:space-x-4 items-center">
+          {menuItems
+            .slice(Math.ceil(menuItems.length / 2))
+            .map((item, index) => (
+              <div
+                key={index}
+                className="text-white hover:text-[#ac440c] text-lg sm:text-base cursor-pointer"
+                onClick={() => handleMenuItemClick(item.link)}
+              >
+                {item.name}
+              </div>
+            ))}
+
+          {/* Social Media Icons */}
+          <a
+            href="https://www.instagram.com/cristinabatphotography/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#ac440c] sm:hidden md:block"
+          >
+            <FaInstagram size={20} />
+          </a>
+          <a
+            href="https://www.facebook.com/profile.php?id=61565607364040"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white hover:text-[#ac440c] sm:hidden md:block"
+          >
+            <FaFacebook size={20} />
+          </a>
+
+          {/* Book Button */}
+          <button
+            onClick={() => {
+              if (location.pathname !== '/') {
+                // Navigate to the homepage and scroll to the "contact" section
+                navigate('/', { state: { scrollTo: 'contact' } });
+              } else {
+                // Scroll to the "contact" section directly
+                scroller.scrollTo('contact', {
+                  smooth: true,
+                  duration: 500,
+                  offset: -100,
+                });
+              }
+            }}
+            className="px-4 py-2 bg-[#ac440c] text-white text-sm font-medium rounded-full hover:bg-[#8a370a] transition-colors duration-300 sm:hidden md:block"
+          >
+            Book
+          </button>
+        </div>
+
         {/* Hamburger Menu Icon */}
-        <div className="sm:hidden">
+        <div className="sm:hidden relative z-50">
           <button
             onClick={toggleMenu}
             className="text-white focus:outline-none"
           >
-            {isOpen ? '' : <FaBars size={24} />}
+            {isOpen ? <FaTimes size={24} /> : <FaBars size={24} />}
           </button>
         </div>
 
-        {/* Menu Items Section */}
+        {/* Mobile Menu */}
         <div
           className={`fixed inset-0 bg-gray-800 bg-opacity-95 flex flex-col items-center justify-center space-y-4 transition-transform duration-300 ${
             isOpen ? 'translate-x-0' : 'translate-x-full'
-          } sm:static sm:flex-row sm:space-y-0 sm:space-x-4 sm:translate-x-0 sm:bg-transparent sm:inset-auto sm:items-center sm:justify-start md:min-w-fit`}
+          } sm:hidden z-40`}
         >
-          <button
-            onClick={toggleMenu}
-            className="absolute top-4 right-4 text-white focus:outline-none sm:hidden"
-          >
-            <FaTimes size={24} />
-          </button>
           {menuItems.map((item, index) => (
             <div
               key={index}
-              className="text-white hover:text-[#ac440c] text-lg sm:text-base cursor-pointer"
+              className="text-white hover:text-[#ac440c] text-lg cursor-pointer"
               onClick={() => handleMenuItemClick(item.link)}
             >
               {item.name}
             </div>
           ))}
-        </div>
 
-        {/* Right Section */}
-        <div className="hidden md:flex md:space-x-4 md:items-center md:mt-4 md:ml-5">
-          <a
-            href="https://www.facebook.com/profile.php?id=61565607364040"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#ac440c]"
+          {/* Social Media Icons in Mobile Menu */}
+          <div className="flex space-x-4">
+            <a
+              href="https://www.instagram.com/cristinabatphotography/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#ac440c]"
+            >
+              <FaInstagram size={24} />
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61565607364040"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white hover:text-[#ac440c]"
+            >
+              <FaFacebook size={24} />
+            </a>
+          </div>
+
+          {/* Book Button */}
+          <button
+            onClick={() => {
+              if (location.pathname !== '/') {
+                // Navigate to the homepage and scroll to the "book" section
+                navigate('/', { state: { scrollTo: 'contact' } });
+              } else {
+                // Scroll to the "book" section directly
+                scroller.scrollTo('contact', {
+                  smooth: true,
+                  duration: 500,
+                  offset: -100,
+                });
+              }
+              toggleMenu(); // Close the mobile menu if open
+            }}
+            className="px-4 py-2 bg-[#ac440c] text-white text-sm font-medium rounded-full hover:bg-[#8a370a] transition-colors duration-300"
           >
-            <FaFacebook size={24} />
-          </a>
-          <a
-            href="https://www.instagram.com/moonwave.photography/?hl=en"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-white hover:text-[#ac440c]"
-          >
-            <FaInstagram size={24} />
-          </a>
-          <ScrollLink
-            to="contact"
-            smooth={true}
-            duration={500}
-            offset={-100}
-            className="bg-[#ac440b] text-white px-4 py-2 sm:px-6 sm:py-3 cursor-pointer rounded-full text-sm sm:text-lg hover:text-black"
-          >
-            BOOK
-          </ScrollLink>
+            Book
+          </button>
         </div>
       </div>
     </nav>
