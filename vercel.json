@@ -11,5 +11,9 @@
     "api/send-email.js": {
       "maxDuration": 10
     }
-  }
+  },
+  "routes": [
+    { "src": "/albums/.*", "dest": "/index.html" },
+    { "src": "/(.*)", "dest": "/index.html" }
+  ]
 }

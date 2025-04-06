@@ -3,6 +3,7 @@ import { useLocation, useParams } from 'react-router-dom';
 import axios from 'axios';
 import PhotoAlbum from '../components/PhotoAlbum';
 import { FaSpinner } from 'react-icons/fa';
+import { Helmet } from 'react-helmet-async';
 
 interface PhotoData {
   src: string;
@@ -20,6 +21,33 @@ const AlbumPage: React.FC = () => {
   const [albumPhotos, setAlbumPhotos] = useState<PhotoData[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+
+  // seo purpose
+  const getAlbumTitle = () => {
+    switch (albumId) {
+      case 'family':
+        return 'Family Photography Portfolio';
+      case 'branding':
+        return 'Professional Branding Photography';
+      case 'maternity':
+        return 'Maternity Photography Sessions';
+      default:
+        return 'Photography Portfolio';
+    }
+  };
+
+  const getAlbumDescription = () => {
+    switch (albumId) {
+      case 'family':
+        return 'View our family photography portfolio. Professional family portraits in Wesley Chapel and Tampa, FL. Natural, authentic family moments captured beautifully.';
+      case 'branding':
+        return 'Professional branding photography portfolio. Business portraits and personal branding photos in Wesley Chapel and Tampa, FL. Elevate your brand image.';
+      case 'maternity':
+        return 'Maternity photography portfolio. Beautiful pregnancy photos in Wesley Chapel and Tampa, FL. Capture your journey into motherhood.';
+      default:
+        return 'Professional photography portfolio in Wesley Chapel and Tampa, FL.';
+    }
+  };
 
   useEffect(() => {
     if (!folderId) {
@@ -61,9 +89,29 @@ const AlbumPage: React.FC = () => {
   }
 
   return (
-    <div>
-      <PhotoAlbum photos={albumPhotos} />
-    </div>
+    <>
+      <Helmet>
+        <title>{getAlbumTitle()} | Cristina Batrincea Photography</title>
+        <meta name="description" content={getAlbumDescription()} />
+        <link
+          rel="canonical"
+          href={`https://cristinabat.com/albums/${albumId}`}
+        />
+        <meta
+          property="og:title"
+          content={`${getAlbumTitle()} | Cristina Batrincea Photography`}
+        />
+        <meta property="og:description" content={getAlbumDescription()} />
+        <meta
+          property="og:url"
+          content={`https://cristinabat.com/albums/${albumId}`}
+        />
+        <meta property="og:type" content="website" />
+      </Helmet>
+      <div>
+        <PhotoAlbum photos={albumPhotos} />
+      </div>
+    </>
   );
 };
 

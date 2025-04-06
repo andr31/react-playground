@@ -1,3 +1,6 @@
 User-agent: *
 Allow: /
+Allow: /albums/family
+Allow: /albums/branding
+Allow: /albums/maternity
 Sitemap: https://cristinabat.com/sitemap.xml
