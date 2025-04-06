@@ -8,6 +8,9 @@ const albumIds = ['family', 'branding', 'maternity']; // Replace with actual alb
 const links = [
   { url: '/', changefreq: 'daily', priority: 1 },
   { url: '/packages', changefreq: 'monthly', priority: 0.7 },
+  { url: '/wesley-chapel-photographer', changefreq: 'weekly', priority: 0.7 },
+  { url: '/tampa-photographer', changefreq: 'weekly', priority: 0.7 },
+
   // Generate URLs for each album
   ...albumIds.map((id) => ({
     url: `/albums/${id}`,
